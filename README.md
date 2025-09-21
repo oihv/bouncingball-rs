@@ -1,4 +1,5 @@
 A simple ASCII bouncing ball simulator (following Tsoding) written on a weekend. Zero dependency, all in terminal.
+![](https://github.com/oihv/bouncingball-rs/demo.gif)
 
 # Notable features:
 - Two line compression system to mitigate TTY rendering for text. (Done by Tsoding)
