@@ -144,7 +144,7 @@ fn main() {
     let mut pos = Vec2::<f32>{x: (WIDTH as f32)/2.0, y: 0.0};
     let mut prev_pos = Vec2::<f32>{x: (WIDTH as f32)/2.0, y: 0.0};
 
-    let mut v = Vec2::<f32>{x: 5.0, y: 0.0};
+    let mut v = Vec2::<f32>{x: 15.0, y: 0.0};
     let r: f32 = 10.0;
 
     let mut stable_count = 0;
