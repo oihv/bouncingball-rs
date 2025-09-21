@@ -17,8 +17,21 @@ const FPS: u32 = 60;
 * ----#-@@@-#----
 * ----#######----
 * ---------------
+* x^2 + y^2 <= r^2
 */
-fn draw_circle(buff: &mut[[u8;WIDTH]; HEIGHT], c: f32, r: f32) {
+fn draw_circle(buff: &mut[[u8;WIDTH]; HEIGHT], cx: f32, cy: f32, r: f32) {
+    for y in (cy - r).floor() as usize ..= (cy + r).ceil() as usize {
+        for x in (cx - r).floor() as usize ..= (cx + r).ceil() as usize {
+            if x > 0 && y > 0 && x < WIDTH && y < HEIGHT {
+                let dx = (x as f32-cx) as i32;
+                let dy = (y as f32-cy) as i32;
+                let r = r as i32; 
+                if dx.pow(2) + dy.pow(2) <= r.pow(2) {
+                    buff[y][x] = b'@';
+                }
+            }
+        }
+    }
 }
 
 fn fill(buff: &mut[[u8;WIDTH]; HEIGHT], c: u8) {
@@ -61,8 +74,9 @@ fn main() {
 
     loop {
         fill(&mut buff, b' ');
+        draw_circle(&mut buff, (WIDTH/2) as f32, (HEIGHT/2) as f32, 5.0);
         generate_string(&mut string_vec, &buff);
         show(&string_vec);
-        sleep(time::Duration::from_secs(1)/60);
+        sleep(time::Duration::from_secs(1)/FPS);
     }
 }
