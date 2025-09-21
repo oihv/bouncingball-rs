@@ -1,4 +1,5 @@
 A simple ASCII bouncing ball simulator (following Tsoding) written on a weekend. Zero dependency, all in terminal.
+
 ![demo](https://github.com/user-attachments/assets/9c23657c-0779-4680-88de-e244f9ef4334)
 
 # Notable features:
